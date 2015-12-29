@@ -1,0 +1,32 @@
+<section class="container-fluid" id="pageHome">
+  
+  <!-- Hero -->
+  <section class="row">
+    <div class="col-sm-12">
+      <h1><span>Vybe</span></h1><br /><br />
+    </div>
+  </section>
+  
+  <!-- Send luv -->
+  <section class="row">
+    <div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2">
+      <form method="post">
+        <div class="button">
+          <a></a>
+        </div>
+        <input type="text" id="amount" name="amount" />
+        <input type="submit" id="submit" value="Send!">
+      </form>
+    </div>
+  </section>
+  
+  <section class="row results">
+    <br /><br />
+    {{#vybes}}
+    <div class="col-sm-2 col-xs-6">
+      {{amount}} sent<br /><span>{{timestamp}}</span><br /><br />
+    </div>
+    {{/vybes}}
+  </section>
+  
+</section>
