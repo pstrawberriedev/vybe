@@ -23,7 +23,7 @@ $('body').flowtype({
 var homeInput = $('#pageHome #amount'),
     homeButton = $('#pageHome .button'),
     homeSubmit = $('#pageHome input[type=submit]'),
-    homeResultsSpan = $('#pageHome .results span'),
+    homeResults = $('#pageHome .results .result'),
     loves = 0;
 
 //Count loves
@@ -36,11 +36,11 @@ function countLove() {
 function returnBorder() {
   TweenLite.to(homeButton, .1, {"border":"1px solid #e35db6", background:"#fff",ease:Power1.easeInOut})
 }
-homeButton.click(function() {
+homeButton.on("click touchstart", function() {
   var $this = $(this);
   countLove();
 });
-homeSubmit.click(function(e) {
+homeSubmit.on("click touchstart", function(e) {
   e.preventDefault;
   if(loves >= 1) {
     console.log('sent!');
@@ -52,10 +52,13 @@ homeSubmit.click(function(e) {
   }
 });
 
-homeResultsSpan.each(function() {
-  var currentDate = $(this).text();
-  var relativeDate = moment(currentDate, "YYYYMMDDhmm").from(currentDate);
-  $(this).text(relativeDate);
+homeResults.each(function() {
+  var currentDate = $(this).find('a').text();
+  var fillText = $(this).find('span');
+  var relativeDate = moment(currentDate, 'X').format("MM/D/YY - h:mma");
+  var fromDate = moment(currentDate, 'X').fromNow();
+  
+  fillText.text(fromDate);
 });
 
 

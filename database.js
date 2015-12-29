@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
-var moment = require('moment');
 
 //Love Notes
 var Comment = new Schema({
@@ -16,4 +15,4 @@ var Vybe = new Schema({
 });
 mongoose.model('vybes', Vybe);
 
-mongoose.connect('mongodb://localhost/vybe_dev4');
+mongoose.connect('mongodb://localhost/vybe_dev7');

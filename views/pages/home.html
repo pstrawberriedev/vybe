@@ -22,9 +22,10 @@
   
   <section class="row results">
     <br /><br />
+    {{err}}
     {{#vybes}}
-    <div class="col-sm-2 col-xs-6">
-      {{amount}} sent<br /><span>{{timestamp}}</span><br /><br />
+    <div class="col-sm-2 col-xs-6 result">
+      {{amount}} sent<br /><a>{{timestamp}}</a><span></span>
     </div>
     {{/vybes}}
   </section>
