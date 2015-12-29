@@ -4,7 +4,7 @@
 $(document).ready(function() {
   console.log('--> vybe.js');
 });
-moment().utcOffset("-07:00");
+
 // Flowtype Init
 // http://simplefocus.com/flowtype/
 $('body').flowtype({
